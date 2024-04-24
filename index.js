@@ -9,11 +9,11 @@ const redis = new Redis({
   db: 0
 });
 
-app.get("/", (req, res) =>{
-  res.send("Hello World!");
-});
+// app.get("/", (req, res) =>{
+//   res.send("Hello World!");
+// });
 
-app.get("/redis", async (req, res) => {
+app.get("/", async (req, res) => {
   let count = await redis.get("count");
   if (count == null) {
     count = 1;
