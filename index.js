@@ -18,7 +18,7 @@ app.get("/", async (req, res) => {
   if (count == null) {
     count = 1;
   }
-  await redis.set("count", count + 1);
+  await redis.set("count", Number(count) + 1);
 
   let result = "Access Count: " + count;
   console.log(result)
